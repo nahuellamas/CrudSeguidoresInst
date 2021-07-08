@@ -17,7 +17,7 @@ require('./config/passport');
 
 
 //conectar la base de datos
-mongoose.connect('mongodb://localhost/crud-seguidores-mongo', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(/*'mongodb://localhost/crud-seguidores-mongo'*/'mongodb+srv://nahuellamas:<Tortugon12_->@pacientes.dwbiq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(db => console.log('BD conectada'))
     .catch(error => console.log('base de datos no conectada'))
 // Impor rutas
