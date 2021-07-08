@@ -7,19 +7,19 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-const createRoles = require('./lib/initialSetup');
+
 
 const APP = express();
-createRoles();
 require('./database');
 require('./config/passport');
 
 
 
-//conectar la base de datos
-mongoose.connect(/*'mongodb://localhost/crud-seguidores-mongo'*/'mongodb+srv://nahuellamas:<Tortugon12_->@pacientes.dwbiq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+//conectar la base de datos /*'mongodb://localhost/crud-seguidores-mongo'*/
+mongoose.connect('mongodb+srv://nahuellamas:xsJF2jS0q79suXR1@crud-seguidores-mongo.dwbiq.mongodb.net/crud-seguidores-mongo?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(db => console.log('BD conectada'))
-    .catch(error => console.log('base de datos no conectada'))
+    .catch(error => console.log('base de datos no conectada', error))
+
 // Impor rutas
 const indexRoutes = require('./routes/index.js');
 //configuracion
