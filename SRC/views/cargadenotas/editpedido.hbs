@@ -1,0 +1,29 @@
+<div class="col-md-4 mx-auto">
+    <div class="card my-4">
+        <div class="card-header">
+            <h3>Editar Pedido</h3>
+        <div class="card-body">
+            <form class="d-grid gap-2" action="/cliente/pedido-editado/{{editpedido._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <input type="text" name="nombre" id="" class="form-control" placeholder="nombre" value="{{editpedido.nombre}}">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="cantidadSeguidores" value="{{editpedido.cantidadSeguidores}}" class="form-control mt-2" placeholder="Cantidad de Seguidores a Cargar"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cuentaInstagram" value="{{editpedido.cuentaInstagram}}" placeholder="Nombre de Instagram" class="form-control mt-2" >
+                </div>
+                
+                <input type="hidden" name="date" value="{{editpedido.date}}" >
+                
+                <div class="form-group">
+                    <label for="file" class="mt-2">Screenshot de Instagram</label>
+                    <input id="file" type="file" name="imagen" class="form-control mt-1" />
+                </div>
+                        
+                <button type="submit" class="btn btn-primary btn-block mt-2">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

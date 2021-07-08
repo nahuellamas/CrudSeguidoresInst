@@ -1,0 +1,31 @@
+<div class="row mt-3">
+    <div class="col-md-5 mx-auto">
+        <div class="card">
+            <div >
+                <P class="card-header lead">Registro de Vendedor</P>
+            </div>
+            <div class="card-body">
+                <form class="d-grid gap-2" action="/signup" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{nombre}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="apellido" placeholder="Apellidos" value="{{apellido}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}" >
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{password}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirmar Contraseña">
+                    </div>
+                    <div class="form-group d-grid">
+                       <button class="btn btn-primary btn-block" type="submit">REGISTRARSE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
