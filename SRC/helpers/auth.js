@@ -1,5 +1,4 @@
 const helpers = {};
-const Role = require('../models/role');
 
 
 helpers.isAuthenticated = (req, res, next) => {

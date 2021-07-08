@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/users');
 const passport = require('passport');
-const Role = require('../models/role');
 
 router.get('/signin' , (req, res) => {
     res.render('users/singin');
@@ -46,13 +45,6 @@ router.post('/signup' , async (req, res) => {
         }
         const newUser = new User({nombre, apellido, email, password, roles});
         newUser.password = await newUser.encryptPassword(password);
-        if(roles){
-            const foundRoles = await Role.findOne({nombre: {$in: roles}})
-            newUser.roles = foundRoles.map(role => role._id)
-        }else {
-            const role = await Role.findOne({nombre: 'user'})
-            newUser.roles = [role._id];
-        }
         await newUser.save();
         req.flash('success_msg', 'Tu registro se genero correctamente');
         res.redirect('/signin');
